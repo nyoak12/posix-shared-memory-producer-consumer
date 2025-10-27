@@ -9,14 +9,17 @@ Likewise, the consumer must wait when there are no items available.
 
 This demonstrates synchronization through semaphores, mutual exclusion, and inter-process communication (IPC).
 
-note: use Makefile commands in terminal to run program:
-       --> make all  (compile and run -> uses "./producer & ./consumer &" to run two processes for communication)
-       --> make stop (to kill running processes)
-       --> make clean (clean up executeables)
+Program flow:
+- The producer process will generate 25 items to place in shared memory as the consumer picks them off.
+- A loop condition will stop the producer from producing more than 25 items to keep terminal clean.
+- The consumer process will consume the last item/items and then wait for user to enter ‘make stop’ in terminal.
+
+note: Makefile commands in terminal to run program:
+
+       make all  // compile and run -> uses "./producer & ./consumer &" to run two processes for communication
+       make stop // to kill running processes
+       make clean // clean up executeables
        
-The producer process will generate 25 items to place in shared memory as the consumer picks them off.
-A conditional will stop the producer from producing more than 25 items to keep terminal clean.
-The consumer process will consume the last item/items and then wait for user to enter 'make stop' in terminal
 ----------------------------------------------------------------------------------------------------------
 
 Components:
